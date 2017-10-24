@@ -4,10 +4,10 @@ project(SOEM C)
 
 option(BUILD_EXAMPLES "Build example bins" OFF)
 
-if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  # Default to installing in SOEM source directory
-  set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
-endif()
+#if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+#  # Default to installing in SOEM source directory
+#  set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
+#endif()
 
 set(SOEM_INCLUDE_INSTALL_DIR include/soem)
 
