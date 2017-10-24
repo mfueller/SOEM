@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8.4)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules")
 project(SOEM C)
 
+option(BUILD_EXAMPLES "Build example bins" OFF)
+
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
   # Default to installing in SOEM source directory
   set(CMAKE_INSTALL_PREFIX ${CMAKE_SOURCE_DIR}/install)
@@ -63,6 +65,9 @@ install(FILES
   ${OSHW_HEADERS}
   DESTINATION ${SOEM_INCLUDE_INSTALL_DIR})
 
-add_subdirectory(test/linux/slaveinfo)
-add_subdirectory(test/linux/eepromtool)
-add_subdirectory(test/linux/simple_test)
+if(BUILD_EXAMPLES)
+   message("Building examples")
+   add_subdirectory(test/linux/slaveinfo)
+   add_subdirectory(test/linux/eepromtool)
+   add_subdirectory(test/linux/simple_test)
+endif()
